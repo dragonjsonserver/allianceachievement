@@ -43,6 +43,7 @@ class Allianceachievement extends \DragonJsonServerAchievement\Entity\AbstractAc
 	public function toArray()
 	{
 		return parent::toArray() + [
+			'entity' => 'Allianceachievement',
 			'allianceachievement_id' => $this->getAllianceachievementId(),
 			'alliance_id' => $this->getAllianceId(),
 		];
