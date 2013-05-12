@@ -28,6 +28,17 @@ class Allianceachievement extends \DragonJsonServerAchievement\Entity\AbstractAc
 	protected $allianceachievement_id;
 	
 	/**
+	 * Setzt die ID der Allianzherausforderung
+	 * @param integer $allianceachievement_id
+	 * @return Allianceachievement
+	 */
+	protected function setAllianceachievementId($allianceachievement_id)
+	{
+		$this->allianceachievement_id = $allianceachievement_id;
+		return $this;
+	}
+	
+	/**
 	 * Gibt die ID der Allianzherausforderung zurück
 	 * @return integer
 	 */
@@ -37,13 +48,24 @@ class Allianceachievement extends \DragonJsonServerAchievement\Entity\AbstractAc
 	}
 	
 	/**
+	 * Setzt die Attribute der Allianzbeziehung aus dem Array
+	 * @param array $array
+	 * @return Allianceachievement
+	 */
+	public function fromArray(array $array)
+	{
+		return parent::fromArray($array)
+			->setAllianceachievementId($array['allianceachievement_id'])
+			->setAllianceId($array['alliance_id']);
+	}
+	
+	/**
 	 * Gibt die Attribute der Allianzherausforderung als Array zurück
 	 * @return array
 	 */
 	public function toArray()
 	{
 		return parent::toArray() + [
-			'entity' => 'Allianceachievement',
 			'allianceachievement_id' => $this->getAllianceachievementId(),
 			'alliance_id' => $this->getAllianceId(),
 		];
