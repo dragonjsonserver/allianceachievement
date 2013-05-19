@@ -85,7 +85,7 @@ class Allianceachievement
 	public function changeAllianceachievement($alliance_id, $gamedesign_identifier, $data)
 	{
 		$allianceachievement = $this->getAllianceachievementByAllianceIdAndGamedesignIdentifier($alliance_id, $gamedesign_identifier);
-		$this->getServiceManager()->get('Achievement')->changeAchievement($allianceachievement, $data);
+		$this->getServiceManager()->get('\DragonJsonServerAchievement\Service\Achievement')->changeAchievement($allianceachievement, $data);
 		return $allianceachievement;
 	}
 }

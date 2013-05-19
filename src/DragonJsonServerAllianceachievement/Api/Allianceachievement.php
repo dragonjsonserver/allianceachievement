@@ -27,8 +27,8 @@ class Allianceachievement
 	{
 		$serviceManager = $this->getServiceManager();
 
-		$allianceavatar = $serviceManager->get('Allianceavatar')->getAllianceavatar();
-		$allianceachievements = $serviceManager->get('Allianceachievement')->getAllianceachievementsByAllianceId($allianceavatar->getAllianceId()); 
-		return $serviceManager->get('Doctrine')->toArray($allianceachievements);
+		$allianceavatar = $serviceManager->get('\DragonJsonServerAlliance\Service\Allianceavatar')->getAllianceavatar();
+		$allianceachievements = $serviceManager->get('\DragonJsonServerAllianceachievement\Service\Allianceachievement')->getAllianceachievementsByAllianceId($allianceavatar->getAllianceId()); 
+		return $serviceManager->get('\DragonJsonServerDoctrine\Service\Doctrine')->toArray($allianceachievements);
 	}
 }

@@ -49,7 +49,7 @@ class Module
     	$sharedManager = $moduleManager->getEventManager()->getSharedManager();
     	$sharedManager->attach('DragonJsonServerAlliance\Service\Alliance', 'RemoveAlliance', 
 	    	function (\DragonJsonServerAlliance\Event\RemoveAlliance $eventRemoveAlliance) {
-	    		$serviceAllianceachievement = $this->getServiceManager()->get('Allianceachievement');
+	    		$serviceAllianceachievement = $this->getServiceManager()->get('\DragonJsonServerAllianceachievement\Service\Allianceachievement');
 	    		$serviceAllianceachievement->removeAllianceachievementsByAllianceId($eventRemoveAlliance->getAlliance()->getAllianceId());
 	    	}
     	);
